@@ -10,10 +10,18 @@ import {RestoService} from '../resto.service'
 })
 export class UpdateRestoComponent implements OnInit {
   alert : boolean=false;
+  ngOptions = ["West Bengal","Orisha","UP","Kerala","Maharastra","Panjab"];
+  ngDropdown = "";
+  ngDistrict = ["Paschim Medinipur","Purba Medinipur","Howrah","Kochbihar","Dargiling","Siliguri"];
+  ngDropdowns = " ";
    editResto= new FormGroup({
     name :new FormControl(''),
     email :new FormControl(''),
-    address :new FormControl('')
+    address :new FormControl(''),
+    mobile :new FormControl(''),
+    state :new FormControl(''),
+    district :new FormControl(''),
+    date: new FormControl(''),
   })
 
   constructor(private router:ActivatedRoute,private resto:RestoService) { }
@@ -26,7 +34,11 @@ export class UpdateRestoComponent implements OnInit {
         this.editResto= new FormGroup({
         name :new FormControl(result['name']),
         email :new FormControl(result['email']),
-        address :new FormControl(result['address'])
+        address :new FormControl(result['address']),
+        mobile :new FormControl(result['mobile']),
+        state :new FormControl(result['state']),
+        district: new FormControl(result['district']),
+        date: new FormControl(result['date']),
     })
     
   }
@@ -38,6 +50,7 @@ collection(){
   this.resto.updateResto(this.router.snapshot.params['id'],this.editResto.value).subscribe((result)=>
   {
     console.warn(result);
+    this.editResto.reset()
    
   })
 }

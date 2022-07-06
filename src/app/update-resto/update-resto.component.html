@@ -24,6 +24,57 @@
         <input type="email" class="form-control"  placeholder="Enter address" formControlName="address">
         <small id="emailHelp" class="form-text text-muted"></small>
       </div><br>
+
+      <div class="form-group">
+        <label> Mobile</label>
+        <input type="number" class="form-control"  placeholder="Mobile" formControlName="mobile">
+        <small id="mobile" class="form-text text-muted"></small>
+      </div><br>
+
+      <div>
+        <label>Select State</label>
+       <select class="form-control" name="state"formControlName="state">
+         
+         <option
+           *ngFor="let opt of ngOptions"
+           [selected]="opt === ngDropdown"
+           [value]="opt">
+         
+           {{ opt }}
+         </option>
+       </select>
+      </div><br>
+      <div>
+        <label>District</label>
+       <select class="form-control" name="state"formControlName="district">
+         
+         <option
+           *ngFor="let opt of ngDistrict"
+           [selected]="opt === ngDropdowns"
+           [value]="opt">
+         
+           {{ opt }}
+         </option>
+       </select>
+      </div><br>
+      <div>
+        <label>District</label>
+       <select class="form-control" name="state"formControlName="district">
+         
+         <option
+           *ngFor="let opt of ngDistrict"
+           [selected]="opt === ngDropdowns"
+           [value]="opt">
+         
+           {{ opt }}
+         </option>
+       </select>
+      </div><br>
+
+      <div>
+        <input type="date" class="form-control" formControlName="date">
+      </div>
+      <br>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 

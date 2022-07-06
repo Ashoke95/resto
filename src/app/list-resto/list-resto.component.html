@@ -8,7 +8,12 @@
         <th scope="col">Name</th>
         <th scope="col">Address</th>
         <th scope="col">Email</th>
+        <th scope="col">Mobile No</th>
+        <th scope="col">State</th>
+        <th scope="col">District</th>
+        <th scope="col">D.O.B</th>
         <th scope="col">Operation</th>
+      
 
       </tr>
     </thead>
@@ -18,7 +23,11 @@
           <th>{{item.name}}</th>
           <th>{{item.address}}</th>
           <th>{{item.email}}</th>
-          <th><i (click)="deleteResto(item.id)" class="fa fa-trash" style="font-size:20px;color:red;"></i>
+          <th>{{item.mobile}}</th>
+          <th>{{item.state}}</th>
+          <th>{{item.district}}</th>
+          <th>{{item.date| date :'fullDate'}}</th>
+          <th> <a  ng-really-message="Are you sure?"><i (click)="deleteResto(item.id)"  class="fa fa-trash" style="font-size:20px;color:red;"></i></a>
             <a routerLink="/update/{{item.id}}">
               <i class="fa fa-edit" style="font-size:20px;color:blue;"></i>
 

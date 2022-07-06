@@ -12,7 +12,7 @@ component:AddRestoComponent,
 },
 {
   component:ListRestoComponent,
-    path:'list'
+    path:''
   },
   {
     component:UpdateRestoComponent,
